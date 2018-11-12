@@ -11,13 +11,7 @@
 
   <body>
     <div class="container">
-      <div>
-        <% if notice %>
-           <p class="alert alert-success"><%= notice %></p>
-        <% elsif alert %>
-           <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
-      </div>
+      <%= render "shared_partials/alerts_notices" %>
       <%= yield %>
     </div>
   </body>
