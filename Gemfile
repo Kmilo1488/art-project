@@ -7,6 +7,8 @@ gem 'bootstrap', '~> 4.1.3'
 
 gem 'jquery-rails'
 
+gem 'mailgun-ruby', '~>1.1.6'
+
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -47,6 +49,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "letter_opener", :group => :development
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
