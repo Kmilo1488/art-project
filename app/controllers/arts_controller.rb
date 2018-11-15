@@ -1,5 +1,5 @@
 class ArtsController < ApplicationController
-  before_action :admin_user, only: [:new, :create, :edit, :update, :destroy]
+  before_action :admin_user, excep: [:show]
 
   def index
     @arts = Art.all
@@ -47,7 +47,4 @@ class ArtsController < ApplicationController
     params.require(:art).permit(:title, :photo, :description, :price)
   end
 
-  def admin_user
-    redirect_to root_path unless user_signed_in? && current_user.role == "admin"
-  end
 end
