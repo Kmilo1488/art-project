@@ -1,0 +1,18 @@
+= form_for @art do |f|
+  = render "shared_partials/error_messages", target: @art
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .row
+    .col
+      .form-group
+        = f.label :photo
+        = f.url_field :photo, class: "form-control"
+    .col
+      .form-group
+        = f.label :price
+        = f.number_field :price, class: "form-control"
+  .form-group
+    = f.label :description
+    = f.text_area :description, class: "form-control"
+  = f.submit form_art, class: "btn btn-primary"

@@ -1,0 +1,12 @@
+= form_for @post do |f|
+  = render "shared_partials/error_messages", target: @post
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: "form-control"
+  .form-group
+    = f.label :image
+    = f.url_field :image, class: "form-control"
+  .form-group
+    = f.label :text
+    = f.text_field :text, class: "form-control"
+  = f.submit form_post, class: "btn btn-primary"

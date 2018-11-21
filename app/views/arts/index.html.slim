@@ -1,0 +1,16 @@
+h1
+  | Mucha Arte
+table.table
+  thead
+    tr
+      th[scope="col"]
+        | Title
+      th[scope="col"]
+        | View
+  - @arts.each do |art|
+    tbody
+      tr
+        td
+          = art.title
+        td
+          = link_to "more", art_path(art)

@@ -1,0 +1,11 @@
+div
+  - if notice
+    p.alert.alert-success
+      a.close[href="#" data-dismiss="alert" aria-label="close"]
+        | ×
+      = notice
+  - elsif alert
+    p.alert.alert-danger
+      = alert
+      a.close[href="#" data-dismiss="alert" aria-label="close"]
+        | ×

@@ -1,0 +1,22 @@
+table.table
+  thead
+    tr
+      th[scope="col"]
+        | image
+      th[scope="col"]
+        | Title
+      th[scope="col"]
+        | Text
+  tbody
+    tr
+      td
+        = image_tag("#{@post.image}")
+      td
+        = @post.title
+      td
+        = @post.text
+- if current_user_admin? || current_user_owner?
+  div
+    = link_to "Edit", edit_post_path(@post), class: "btn btn-primary"
+    = link_to "Delete", @post, class: "btn btn-danger", method: :delete, data: { confirm: "Are you shure?" }
+= link_to "Back", posts_path, class: "btn btn-secondary"

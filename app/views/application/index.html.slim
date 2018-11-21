@@ -1,0 +1,14 @@
+h2
+  | Hola Arte
+- if current_user_admin?
+  h2
+    | Eres un Administrador
+
+= link_to "Art", arts_path
+= link_to "Post", posts_path
+
+- if current_user_admin?
+  = link_to "New Art", new_art_path
+
+- if current_user_admin? || current_user_collaborator?
+  = link_to "New Post", new_post_path

@@ -1,0 +1,26 @@
+table.table
+  thead
+    tr
+      th[scope="col"]
+        | Photo
+      th[scope="col"]
+        | Title
+      th[scope="col"]
+        | Description
+      th[scope="col"]
+        | Price
+  tbody
+    tr
+      td
+        = image_tag("#{@art.photo}")
+      td
+        = @art.title
+      td
+        = @art.description
+      td
+        = @art.price
+- if current_user_admin?
+  div
+    = link_to "Edit", edit_art_path(@art), class: "btn btn-primary"
+    = link_to "Delete", @art, class: "btn btn-danger", method: :delete, data: { confirm: "Are you shure?" }
+= link_to "Back", arts_path, class: "btn btn-secondary"
