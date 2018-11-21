@@ -39,7 +39,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
-gem 'mailgun-ruby', '~>1.1.6'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 group :development, :test do

@@ -8,4 +8,8 @@ module ApplicationHelper
     user_signed_in? && current_user.role == "collaborator"
   end
 
+  def current_user_owner?
+    user_signed_in? && current_user.id == @post.owner_id
+  end
+
 end

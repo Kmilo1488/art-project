@@ -1,15 +1,17 @@
 <h2>Hola Arte</h2>
 
-
-<%- if user_signed_in? && current_user.role == 'admin' %>
+<%- if current_user_admin? %>
   <h2>Eres un Administrador</h2>
 <% end -%>
 
+<%= link_to "Art", arts_path %>
+<%= link_to "Post", posts_path %>
 
-<%- if user_signed_in? %>
-  <%= link_to "Art", arts_path %>
-<% end -%>
 
 <%- if current_user_admin? %>
   <%= link_to "New Art", new_art_path %>
+<% end -%>
+
+<%- if current_user_admin? || current_user_collaborator? %>
+  <%= link_to "New Post", new_post_path %>
 <% end -%>

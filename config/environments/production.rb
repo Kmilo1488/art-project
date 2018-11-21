@@ -10,13 +10,18 @@ Rails.application.configure do
   # Rake tasks automatically ignore this option for performance.
   config.eager_load = true
 
-  config.action_mailer.delivery_method = :mailgun
-  config.action_mailer.mailgun_settings = {
-    api_key: ENV['MAILGUN_KEY'],
-    domain: ENV['MAILGUN_DOM'],
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+     address: 'smtp.gmail.com',
+     port: 587,
+     user_name: ENV['MAIL_USERNAME'],
+     password: ENV['MAIL_PASS'],
+     authentication: :plain,
+     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: 'stark-inlet-10890.herokuapp.com'}
+  config.action_mailer.default_url_options = { host: 'murmuring-ravine-68952.herokuapp.com'}
 
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false

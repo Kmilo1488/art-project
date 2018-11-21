@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  add_flash_types :notice, :alert
 
   def index
   end
@@ -8,11 +9,16 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_user
-    redirect_to root_path unless user_signed_in? && current_user.role == "admin"
+    user_signed_in? && current_user.role == "admin"
   end
 
   def collaborator_user
-    redirect_to root_path unless user_signed_in? && current_user.role == "collaborator"
+    user_signed_in? && current_user.role == "admin" || "collaborator"
+  end
+
+  def post_owner
+    @post = Post.find(params[:id])
+    @post.owner_id == current_user.id
   end
 
 end

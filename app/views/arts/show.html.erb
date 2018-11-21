@@ -17,7 +17,7 @@
   </tbody>
 </table>
 
-<% if current_user_admin? == "admin" %>
+<% if current_user_admin? %>
   <div>
     <%= link_to "Edit", edit_art_path(@art), class: "btn btn-primary" %>
     <%= link_to "Delete", @art, class: "btn btn-danger", method: :delete, data: { confirm: "Are you shure?" } %>

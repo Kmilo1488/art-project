@@ -1,4 +1,4 @@
-<h1>Mucha Arte</h1>
+<h1>Post</h1>
 
   <table class="table">
       <thead>
@@ -7,11 +7,11 @@
           <th scope="col">View</th>
         </tr>
       </thead>
-      <%- @arts.each do |art| %>
+      <%- @posts.each do |post| %>
         <tbody>
           <tr>
-            <td> <%= art.title %> </td>
-            <td> <%= link_to "more", art_path(art) %> </td>
+            <td> <%= post.title %> </td>
+            <td> <%= link_to "more", post_path(post) %> </td>
           </tr>
         </tbody>
       <% end -%>

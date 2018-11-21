@@ -1,5 +1,6 @@
 class ArtsController < ApplicationController
-  before_action :admin_user, excep: [:show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :admin_user, except: [:index, :show]
 
   def index
     @arts = Art.all
@@ -10,7 +11,7 @@ class ArtsController < ApplicationController
   end
 
   def new
-    @art = Art.new(user: current_user)
+    @art = Art.new(owner: current_user)
   end
 
   def create
