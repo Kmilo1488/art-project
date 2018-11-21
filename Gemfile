@@ -47,6 +47,8 @@ group :development, :test do
 end
 
 group :development do
+  gem "guard"
+  gem 'guard-livereload', '~> 2.5', require: false
   gem 'annotate', '~> 2.7', '>= 2.7.1'
   gem "letter_opener", :group => :development
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
