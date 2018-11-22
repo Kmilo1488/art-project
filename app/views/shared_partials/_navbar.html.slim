@@ -1,0 +1,22 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  = link_to "Art Project", root_path, class: "navbar-brand"
+  ul.navbar-nav.ml-auto
+    li.nav-item.active
+    - if user_signed_in?
+      = link_to "#{current_user.email}", arts_path, class: 'nav-link active'
+  form.form-group.ml-auto.search
+    input.form-control[type="search" placeholder="Search"]
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  button.navbar-toggler[type="button" data-toggle="collapse" data-target="#navbarLinks"]
+    span.navbar-toggler-icon
+  - if user_signed_in?
+    = link_to "Log out", destroy_user_session_path, class: 'btn btn-danger', method: :delete
+  - else
+    = link_to "Log in", new_user_session_path, class: 'btn btn-primary'
+  #navbarLinks.collapse.navbar-collapse
+    ul.navbar-nav.text-center.ml-auto
+      li.nav-item.active
+        a.nav-link[href="#"]
+          | Right Link 2
+      li.nav-item.active
+        = link_to "Blog", posts_path, class: 'nav-link'

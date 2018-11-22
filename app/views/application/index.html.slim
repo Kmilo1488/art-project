@@ -4,9 +4,6 @@ h2
   h2
     | Eres un Administrador
 
-= link_to "Art", arts_path
-= link_to "Post", posts_path
-
 - if current_user_admin?
   = link_to "New Art", new_art_path
 
