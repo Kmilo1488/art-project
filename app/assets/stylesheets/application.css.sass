@@ -1,0 +1,23 @@
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "variables"
+@import "bootstrap"
+@import "font-awesome-sprockets"
+@import "font-awesome"
+
+.search
+  margin: 0px
+  @include start-tablet-size
+    width: 100%
+
+
+.navbar-brand::before
+  font-family: "Font Awesome 5 Free"
+  content: "\f1fc"
+  font-weight: 900
+  padding-right: 2px
+
+.cart::before
+  font-family: "font Awesome 5 Free"
+  content: "\f07a"
+  font-weight: 900
+  padding-right: 2px
