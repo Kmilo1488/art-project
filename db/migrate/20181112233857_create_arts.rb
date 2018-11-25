@@ -5,7 +5,7 @@ class CreateArts < ActiveRecord::Migration[5.2]
       t.text :description
       t.decimal :price
       t.string :photo
-      t.references :owner
+      t.references :artist
 
       t.timestamps
     end

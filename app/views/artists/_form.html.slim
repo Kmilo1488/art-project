@@ -1,0 +1,14 @@
+= form_for @artist do |f|
+  .form-group
+    = f.label :name
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :review
+    = f.text_area :review, class: 'form-control'
+  .form-group
+    = f.label :country
+    = f.text_field :country, class: 'form-control'
+  .form-group
+    = f.label :region
+    = f.select :region, Artist.regions.keys, {}, class: 'form-control'
+  = f.submit form_artist, class: "btn btn-primary"

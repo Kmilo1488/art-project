@@ -11,13 +11,24 @@ class ArtsController < ApplicationController
   end
 
   def new
-    @art = Art.new(owner: current_user)
+    @art = Art.new
   end
 
+  # def create
+  #   @art = current_user.arts.build(art_params)
+  #   if @art.save
+  #     redirect_to arts_path, notice: "New Art Create"
+  #   else
+  #     render :new, alert: "Create Art Failed"
+  #   end
+  # end
+
+
   def create
-    @art = current_user.arts.build(art_params)
+    artist = Artist.find(params[:artist_id])
+    @art = artist.arts.create(art_params)
     if @art.save
-      redirect_to arts_path, notice: "New Art Create"
+      redirect_to root_path, notice: "New Art Create"
     else
       render :new, alert: "Create Art Failed"
     end

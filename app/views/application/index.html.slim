@@ -1,11 +1,13 @@
-h2
-  | Hola Arte
+h2 Hola Arte
 - if current_user_admin?
   h2
     | Eres un Administrador
 
 - if current_user_admin?
-  = link_to "New Art", new_art_path
+  = link_to "New Artist", new_artist_path
 
 - if current_user_admin? || current_user_collaborator?
   = link_to "New Post", new_post_path
+
+
+= link_to "Artistas", artists_path, class: 'btn btn-success'

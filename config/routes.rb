@@ -8,7 +8,11 @@ Rails.application.routes.draw do
     unlocks: 'users/unlocks',
   }
 
-  resources :arts
+  resources :artists do
+    resources :arts
+  end
+
+  resources :arts, only: [:index, :show]
 
   resources :posts
 

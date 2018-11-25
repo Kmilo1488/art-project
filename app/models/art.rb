@@ -7,13 +7,13 @@
 #  description :text
 #  price       :decimal(, )
 #  photo       :string
-#  owner_id    :bigint(8)
+#  artist_id   :bigint(8)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
 
 class Art < ApplicationRecord
 
-  belongs_to :owner, foreign_key: :owner_id, class_name: "User"
+  belongs_to :artist, foreign_key: :artist_id, class_name: "Artist"
 
 end

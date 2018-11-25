@@ -7,7 +7,7 @@
 #  description :text
 #  price       :decimal(, )
 #  photo       :string
-#  owner_id    :bigint(8)
+#  artist_id   :bigint(8)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
